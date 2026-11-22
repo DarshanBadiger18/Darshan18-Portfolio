@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 600" fill="none">
+  <defs>
+    <linearGradient id="leaf" x1="324" y1="426" x2="606" y2="166" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#34D399"/>
+      <stop offset=".52" stop-color="#A3E635"/>
+      <stop offset="1" stop-color="#2DD4BF"/>
+    </linearGradient>
+    <linearGradient id="cross" x1="637" y1="221" x2="733" y2="317" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#A7F3D0"/>
+      <stop offset="1" stop-color="#5EEAD4"/>
+    </linearGradient>
+    <filter id="glow" x="175" y="64" width="615" height="497" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+      <feGaussianBlur stdDeviation="12" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+  <ellipse cx="482" cy="476" rx="260" ry="37" fill="#34D399" fill-opacity=".09"/>
+  <g filter="url(#glow)">
+    <path d="M291 414c15-160 140-263 336-282-16 193-114 329-277 340-38 2-62-20-59-58Z" fill="url(#leaf)" fill-opacity=".22" stroke="url(#leaf)" stroke-width="10"/>
+    <path d="M316 448c89-116 187-202 291-278m-215 209-19-93m87 22 91-8m-146 122-71-15" stroke="url(#leaf)" stroke-width="8" stroke-linecap="round"/>
+    <path d="M661 161h61v56h56v61h-56v56h-61v-56h-56v-61h56v-56Z" fill="#0F172A" stroke="url(#cross)" stroke-width="8" stroke-linejoin="round"/>
+    <circle cx="314" cy="182" r="15" fill="#A3E635" fill-opacity=".5"/>
+    <circle cx="675" cy="419" r="11" fill="#5EEAD4" fill-opacity=".65"/>
+    <circle cx="762" cy="385" r="6" fill="#A3E635" fill-opacity=".7"/>
+  </g>
+  <g stroke="#A7F3D0" stroke-opacity=".4" stroke-linecap="round">
+    <path d="M208 284c-24-25-24-64 0-88m-23 110c-38-39-38-101 0-140"/>
+    <path d="M748 121c24 25 24 64 0 88m23-110c38 39 38 101 0 140"/>
+  </g>
+  <g fill="#6EE7B7">
+    <circle cx="243" cy="164" r="4"/><circle cx="710" cy="476" r="5"/><circle cx="260" cy="476" r="4"/>
+  </g>
+</svg>

@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 600" fill="none">
+  <defs>
+    <linearGradient id="paper" x1="340" y1="115" x2="595" y2="478" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#E0F2FE"/>
+      <stop offset="1" stop-color="#C7D2FE"/>
+    </linearGradient>
+    <linearGradient id="score" x1="591" y1="328" x2="754" y2="491" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#34D399"/>
+      <stop offset="1" stop-color="#22D3EE"/>
+    </linearGradient>
+    <filter id="glow" x="212" y="65" width="558" height="495" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+      <feGaussianBlur stdDeviation="12" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+  <ellipse cx="482" cy="493" rx="266" ry="27" fill="#38BDF8" fill-opacity=".12"/>
+  <g filter="url(#glow)">
+    <path d="M300 122a28 28 0 0 1 28-28h182l115 115v236a28 28 0 0 1-28 28H328a28 28 0 0 1-28-28V122Z" fill="url(#paper)" fill-opacity=".88" stroke="#7DD3FC" stroke-width="5"/>
+    <path d="M510 95v92a22 22 0 0 0 22 22h91" stroke="#38BDF8" stroke-opacity=".8" stroke-width="6"/>
+    <circle cx="363" cy="257" r="22" stroke="#6366F1" stroke-width="6"/>
+    <path d="m352 257 8 8 16-18" stroke="#6366F1" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M405 247h143M405 269h104M350 321h192M350 343h158M350 397h118" stroke="#64748B" stroke-opacity=".5" stroke-width="8" stroke-linecap="round"/>
+    <circle cx="668" cy="376" r="87" fill="#0F172A" stroke="url(#score)" stroke-width="11"/>
+    <path d="M668 309a67 67 0 1 1-58 34" stroke="url(#score)" stroke-width="12" stroke-linecap="round"/>
+    <path d="m637 373 21 21 42-49" stroke="#A7F3D0" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <g fill="#7DD3FC" fill-opacity=".8">
+    <circle cx="244" cy="188" r="5"/><circle cx="715" cy="245" r="6"/><circle cx="257" cy="408" r="4"/>
+  </g>
+  <g stroke="#818CF8" stroke-opacity=".35">
+    <path d="M204 224h54m-27-27v54M742 178h48m-24-24v48"/>
+  </g>
+</svg>

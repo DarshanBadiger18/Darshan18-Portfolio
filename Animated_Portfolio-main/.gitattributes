@@ -1,0 +1,10 @@
+# ==============================================================================
+# AUTHORSHIP METADATA
+# Project: Animated 3D Portfolio
+# Author: Darshan Badiger (DarshanBadiger18)
+# GitHub: https://github.com/DarshanBadiger18
+# ==============================================================================
+
+# Protect critical attribution files from being easily modified or merged over
+LICENSE linguist-generated=false merge=ours
+README.md linguist-generated=false

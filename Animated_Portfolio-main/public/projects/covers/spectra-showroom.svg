@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 600" fill="none">
+  <defs>
+    <linearGradient id="frame" x1="252" y1="408" x2="680" y2="214" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#22D3EE"/>
+      <stop offset=".52" stop-color="#818CF8"/>
+      <stop offset="1" stop-color="#F472B6"/>
+    </linearGradient>
+    <linearGradient id="body" x1="354" y1="331" x2="635" y2="251" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0EA5E9" stop-opacity=".85"/>
+      <stop offset="1" stop-color="#C026D3" stop-opacity=".78"/>
+    </linearGradient>
+    <filter id="glow" x="120" y="95" width="720" height="440" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+      <feGaussianBlur stdDeviation="9" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+  <ellipse cx="480" cy="450" rx="320" ry="44" fill="#22D3EE" fill-opacity=".08"/>
+  <ellipse cx="480" cy="450" rx="250" ry="2" stroke="#67E8F9" stroke-opacity=".35"/>
+  <g filter="url(#glow)" stroke="url(#frame)" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="298" cy="390" r="79" stroke-width="9"/>
+    <circle cx="663" cy="390" r="79" stroke-width="9"/>
+    <circle cx="298" cy="390" r="8" fill="#67E8F9" stroke="none"/>
+    <circle cx="663" cy="390" r="8" fill="#F0ABFC" stroke="none"/>
+    <path d="m298 390 99-115 98 115H298Zm99-115h93l83 115H495m-98-115-35-43h-50m247 158 54-142h64l25 27m-62-27 30-45h57" stroke-width="10"/>
+    <path d="M398 270c28-30 65-48 109-49l55 5c20 2 36 17 42 37l-23 27h-78l-49 42h-74l-31-28 49-34Z" fill="url(#body)" stroke-width="7"/>
+    <path d="m422 247 26-35h72l38 16m48 90 40 4m-334 0 45-7" stroke-width="8"/>
+    <path d="m636 224 28-14 19 7-14 17h-28" fill="#67E8F9" stroke-width="5"/>
+  </g>
+  <g stroke="#A5F3FC" stroke-opacity=".38">
+    <path d="M175 178h108M677 153h105M198 205h48M714 181h53"/>
+    <path d="M224 143v18m18-18v18m18-18v18m426-4v18m18-18v18m18-18v18"/>
+  </g>
+</svg>
