@@ -213,6 +213,34 @@ export const portfolioData = {
 
   projects: [
     {
+      id: 'spiderman-interactive-website',
+      title: 'Spider-Man: Brand New Day Interactive Website',
+      description:
+        'A fan-made cinematic website concept featuring scroll-scrubbed canvas animation, a release countdown, character and gallery sections, and animated transitions.',
+      details: `## Overview
+A fan-made concept website inspired by Spider-Man: Brand New Day, built as an interactive cinematic web experience. It is an independent fan project and is not an official Marvel or Sony release.
+
+## Key Features
+- Scroll-driven hero animation rendered through a canvas
+- Cinematic captions and release countdown content
+- Responsive navigation with smooth section scrolling
+- Character origin, cast, powers, suits, villains, and gallery sections
+- Animated trailer and call-to-action areas
+- Toast notifications and custom cinematic styling
+
+## Technical Stack
+- Next.js 16 App Router and React 19
+- TypeScript and Tailwind CSS 4
+- GSAP with ScrollTrigger
+- Framer Motion`,
+      technologies: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'GSAP', 'Framer Motion'],
+      githubUrl: 'https://github.com/DarshanBadiger18/SpiderMan-Interactive-Website',
+      status: 'completed',
+      priority: 'high',
+      thumbnail: '/projects/covers/spiderman-interactive-website.svg',
+      screenshots: ['/projects/covers/spiderman-interactive-website.svg'],
+    },
+    {
       id: 'darshan18-portfolio',
       title: 'Darshan18 Portfolio',
       description:

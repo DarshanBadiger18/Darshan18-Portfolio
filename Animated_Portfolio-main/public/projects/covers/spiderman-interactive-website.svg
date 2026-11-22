@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 600" fill="none">
+  <defs>
+    <linearGradient id="web" x1="239" y1="164" x2="727" y2="454" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#38BDF8"/>
+      <stop offset=".52" stop-color="#A5B4FC"/>
+      <stop offset="1" stop-color="#FB7185"/>
+    </linearGradient>
+    <linearGradient id="sky" x1="462" y1="161" x2="478" y2="454" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1E3A8A" stop-opacity=".12"/>
+      <stop offset="1" stop-color="#0F172A" stop-opacity=".78"/>
+    </linearGradient>
+    <filter id="glow" x="125" y="46" width="710" height="512" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+      <feGaussianBlur stdDeviation="11" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+  <ellipse cx="480" cy="485" rx="302" ry="34" fill="#38BDF8" fill-opacity=".09"/>
+  <path d="M197 455h566" stroke="#64748B" stroke-opacity=".42" stroke-width="4"/>
+  <g fill="#111827" fill-opacity=".75" stroke="#64748B" stroke-opacity=".42" stroke-width="3">
+    <path d="M220 455V329h58v-43h43v169H220Zm116 0V264h48v-53h47v244H336Zm312 0V294h45v-53h46v214H648Zm111 0V333h54v-42h40v164h-94Z"/>
+    <path d="M234 349h13m19 0h13m-45 26h13m19 0h13m-13-65h13m93 0h13m19 0h13m-45 29h13m19 0h13m-45 29h13m19 0h13m-45 29h13m19 0h13m238-89h12m18 0h12m-42 29h12m18 0h12m-42 29h12m18 0h12m101 0h12m18 0h12m-42 29h12m18 0h12"/>
+  </g>
+  <g filter="url(#glow)" stroke="url(#web)" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M480 94v318M303 146l354 249M657 146 303 395M251 221l458 98M251 320l458-99" stroke-width="5" stroke-opacity=".8"/>
+    <path d="M480 154c-93 55-146 107-161 156 85-2 137 22 161 72 24-50 76-74 161-72-15-49-68-101-161-156Zm0 66c-53 34-86 66-99 96 48 2 81 18 99 48 18-30 51-46 99-48-13-30-46-62-99-96Zm0 54c-23 16-39 32-48 49 23 3 39 11 48 26 9-15 25-23 48-26-9-17-25-33-48-49Z" stroke-width="4" stroke-opacity=".78"/>
+    <path d="M480 113c-143 79-224 162-243 249m243-249c143 79 224 162 243 249M480 113c-82 105-123 188-123 249m123-249c82 105 123 188 123 249" stroke-width="3" stroke-opacity=".44"/>
+    <path d="m480 106 12 20-12 20-12-20 12-20Z" fill="#FB7185" stroke="#FDA4AF" stroke-width="4"/>
+  </g>
+  <path d="M166 204h39m-20-20v40M749 180h45m-22-22v45" stroke="#93C5FD" stroke-opacity=".52" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="221" cy="258" r="5" fill="#FB7185"/>
+  <circle cx="737" cy="256" r="6" fill="#38BDF8"/>
+</svg>

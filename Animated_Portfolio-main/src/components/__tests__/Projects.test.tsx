@@ -29,6 +29,7 @@ describe('Projects', () => {
 
   it('shows only the requested repositories', () => {
     expect(portfolioData.projects.map((project) => project.githubUrl)).toEqual([
+      'https://github.com/DarshanBadiger18/SpiderMan-Interactive-Website',
       'https://github.com/DarshanBadiger18/Darshan18-Portfolio',
       'https://github.com/DarshanBadiger18/AgroShree-AI',
       'https://github.com/DarshanBadiger18/SPEACTRA.-Showroom',
