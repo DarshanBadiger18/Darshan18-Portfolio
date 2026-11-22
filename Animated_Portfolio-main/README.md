@@ -407,6 +407,8 @@ This portfolio was **designed and built by [darshan badiger](https://github.com/
 - ❌ Do NOT remove author references
 - ❌ Do NOT sell or redistribute as a template
 
+[github.com/DarshanBadiger18](https://github.com/DarshanBadiger18)
+
 ---
 
 <div align="center">
