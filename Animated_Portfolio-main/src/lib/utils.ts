@@ -2,10 +2,8 @@ import { ClassValue, clsx } from 'clsx';
 import { twMerge } from 'tailwind-merge';
 
 /**
- * @author Nithin K R (NITHINKR06)
- * @see https://github.com/NITHINKR06/Animated_Portfolio
  * Utility library for Animated 3D Portfolio.
- * Attribution required for derivative works — see LICENSE.
+ * Attribution required for derivative works â€” see LICENSE.
  */
 
 export function cn(...inputs: ClassValue[]) {

@@ -1,12 +1,10 @@
 /**
  * @component RevealKit
  * @description Shared hover/interaction primitives (3D mouse-tilt cards, rotating
- *   gradient borders, magnetic buttons) originally built for the Services page —
+ *   gradient borders, magnetic buttons) originally built for the Services page â€”
  *   pulled out here so the rest of the site can reuse the exact same interactions
  *   instead of re-implementing lookalikes.
- * @author      Nithin K R — https://github.com/NITHINKR06
- * @license     Attribution required — see LICENSE in project root
- * @source      https://github.com/NITHINKR06/Animated_Portfolio
+ * @license     Attribution required â€” see LICENSE in project root
  */
 import { useRef, useState } from 'react';
 import { motion } from 'framer-motion';
@@ -28,7 +26,7 @@ export function MagneticButton({
 }) {
   const { ref, onMouseMove, onMouseLeave } = useMagnetic(0.4);
   // The href variant styles the <Link> itself rather than nesting a <button>
-  // inside the anchor — nested interactive elements are invalid HTML and read
+  // inside the anchor â€” nested interactive elements are invalid HTML and read
   // as two separate controls to assistive tech.
   if (href) {
     return (
@@ -59,7 +57,7 @@ export function MagneticButton({
   );
 }
 
-/* ── 3D Tilt Card — real pointer-tracked perspective tilt, not a fixed entrance pose ── */
+/* â”€â”€ 3D Tilt Card â€” real pointer-tracked perspective tilt, not a fixed entrance pose â”€â”€ */
 export function TiltCard({
   children,
   className = '',
@@ -90,7 +88,7 @@ export function TiltCard({
       className={className}
       style={{
         transformStyle: 'preserve-3d',
-        // perspective() has to be part of this element's own transform — the
+        // perspective() has to be part of this element's own transform â€” the
         // `perspective` property only applies to descendants, so setting it
         // here separately would leave the tilt below completely flat.
         transform: `perspective(1000px) rotateX(${rotate.x}deg) rotateY(${rotate.y}deg)`,
@@ -102,7 +100,7 @@ export function TiltCard({
   );
 }
 
-/* ── Animated conic-gradient border — spins in on hover, not a static ring ── */
+/* â”€â”€ Animated conic-gradient border â€” spins in on hover, not a static ring â”€â”€ */
 export function GradientBorder({
   children,
   className = '',

@@ -4,7 +4,6 @@ This document describes the current site as if you were walking through the code
 
 ## 1. Visual Identity
 
-The portfolio is an animated, 3D-heavy personal site for **Nithin K R**. The current visual direction is:
 
 - **Primary mood:** dark cinematic portfolio with glass panels, red accents, cream highlights, and subtle 3D depth.
 - **Allowed main colors:** black, white, red, cream/off-white.
@@ -273,7 +272,7 @@ The About section is a bento-style grid with glass cards.
 
 Cards include:
 
-- Big bio card: “Builder · Hacker · Creator”
+- Big bio card: â€œBuilder Â· Hacker Â· Creatorâ€
 - Location and availability
 - Stats counters
 - Currently card
@@ -519,7 +518,7 @@ src/components/ResumeModal.tsx
 
 The resume modal opens when:
 
-- User clicks “View Resume” in the hero.
+- User clicks â€œView Resumeâ€ in the hero.
 - User visits `/resume`.
 
 It displays:
@@ -685,48 +684,46 @@ High-level structure:
 
 ```txt
 Animated_Portfolio/
-├── public/
-│   ├── 3d/
-│   ├── certificate/
-│   ├── images/
-│   ├── logos/
-│   ├── projects/
-│   ├── resume's/
-│   ├── NITHINKR06.webp
-│   └── NithinKR.pdf
-├── scripts/
-│   └── checkOgImage.ts
-├── src/
-│   ├── components/
-│   │   ├── project-modal/
-│   │   ├── __tests__/
-│   │   ├── About.tsx
-│   │   ├── Certification.tsx
-│   │   ├── Contact.tsx
-│   │   ├── Education.tsx
-│   │   ├── Experience.tsx
-│   │   ├── Hero.tsx
-│   │   ├── LoadingScreen.tsx
-│   │   ├── MobileNav.tsx
-│   │   ├── Projects.tsx
-│   │   ├── ResumeModal.tsx
-│   │   ├── Services.tsx
-│   │   ├── Sidebar.tsx
-│   │   ├── Skills.tsx
-│   │   ├── ThreeDBackground.tsx
-│   │   ├── ThreeDSkillsTree.tsx
-│   │   └── ThemeProvider.tsx
-│   ├── data/
-│   ├── hooks/
-│   ├── lib/
-│   ├── App.tsx
-│   ├── global.css
-│   └── main.tsx
-├── index.html
-├── package.json
-├── tailwind.config.js
-├── vite.config.ts
-└── theme-migration-plan.md
+â”œâ”€â”€ public/
+â”‚   â”œâ”€â”€ 3d/
+â”‚   â”œâ”€â”€ certificate/
+â”‚   â”œâ”€â”€ images/
+â”‚   â”œâ”€â”€ logos/
+â”‚   â”œâ”€â”€ projects/
+â”‚   â”œâ”€â”€ resume's/
+â”œâ”€â”€ scripts/
+â”‚   â””â”€â”€ checkOgImage.ts
+â”œâ”€â”€ src/
+â”‚   â”œâ”€â”€ components/
+â”‚   â”‚   â”œâ”€â”€ project-modal/
+â”‚   â”‚   â”œâ”€â”€ __tests__/
+â”‚   â”‚   â”œâ”€â”€ About.tsx
+â”‚   â”‚   â”œâ”€â”€ Certification.tsx
+â”‚   â”‚   â”œâ”€â”€ Contact.tsx
+â”‚   â”‚   â”œâ”€â”€ Education.tsx
+â”‚   â”‚   â”œâ”€â”€ Experience.tsx
+â”‚   â”‚   â”œâ”€â”€ Hero.tsx
+â”‚   â”‚   â”œâ”€â”€ LoadingScreen.tsx
+â”‚   â”‚   â”œâ”€â”€ MobileNav.tsx
+â”‚   â”‚   â”œâ”€â”€ Projects.tsx
+â”‚   â”‚   â”œâ”€â”€ ResumeModal.tsx
+â”‚   â”‚   â”œâ”€â”€ Services.tsx
+â”‚   â”‚   â”œâ”€â”€ Sidebar.tsx
+â”‚   â”‚   â”œâ”€â”€ Skills.tsx
+â”‚   â”‚   â”œâ”€â”€ ThreeDBackground.tsx
+â”‚   â”‚   â”œâ”€â”€ ThreeDSkillsTree.tsx
+â”‚   â”‚   â””â”€â”€ ThemeProvider.tsx
+â”‚   â”œâ”€â”€ data/
+â”‚   â”œâ”€â”€ hooks/
+â”‚   â”œâ”€â”€ lib/
+â”‚   â”œâ”€â”€ App.tsx
+â”‚   â”œâ”€â”€ global.css
+â”‚   â””â”€â”€ main.tsx
+â”œâ”€â”€ index.html
+â”œâ”€â”€ package.json
+â”œâ”€â”€ tailwind.config.js
+â”œâ”€â”€ vite.config.ts
+â””â”€â”€ theme-migration-plan.md
 ```
 
 ## 23. Main Dependencies

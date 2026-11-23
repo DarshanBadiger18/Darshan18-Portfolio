@@ -1,10 +1,7 @@
 /**
- * useLenis — Smooth scroll hook
- * Part of the Animated 3D Portfolio by Nithin K R
+ * useLenis â€” Smooth scroll hook
  *
- * @author  Nithin K R (https://github.com/NITHINKR06)
- * @license Attribution required — see LICENSE
- * @source  https://github.com/NITHINKR06/Animated_Portfolio
+ * @license Attribution required â€” see LICENSE
  */
 import { useEffect } from 'react';
 import Lenis from 'lenis';

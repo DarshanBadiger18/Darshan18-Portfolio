@@ -1,11 +1,8 @@
 /**
  * @component Projects
  * @description Projects section of the Animated 3D Portfolio
- * @author      Nithin K R — https://github.com/NITHINKR06
- * @license     Attribution required — see LICENSE in project root
- * @source      https://github.com/NITHINKR06/Animated_Portfolio
+ * @license     Attribution required â€” see LICENSE in project root
  *
- * Part of a personal portfolio. Content and design belong to Nithin K R.
  * Code structure may be studied; redistribution as personal portfolio
  * without attribution violates the project license.
  */
@@ -87,7 +84,7 @@ export const Projects = ({ onProjectClick = () => {} }: ProjectsProps) => {
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
             My <span className="text-gradient">Projects</span>
           </h2>
-          <p className="text-lg text-gray-400">Swipe or click to explore — interactive 3D deck</p>
+          <p className="text-lg text-gray-400">Swipe or click to explore â€” interactive 3D deck</p>
         </motion.div>
 
         {projects.length === 0 ? (

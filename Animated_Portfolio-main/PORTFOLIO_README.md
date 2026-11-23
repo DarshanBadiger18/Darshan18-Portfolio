@@ -1,23 +1,21 @@
 <div align="center">
 
-# 👨‍💻 Darshan Badiger — Project Portfolio
+# ðŸ‘¨â€ðŸ’» Darshan Badiger â€” Project Portfolio
 
-[![GitHub](https://img.shields.io/badge/GitHub-NITHINKR06-181717?style=for-the-badge&logo=github)](https://github.com/NITHINKR06)
-[![Portfolio](https://img.shields.io/badge/Portfolio-Live-00C7B7?style=for-the-badge&logo=vercel)](https://nithinkr.vercel.app)
 
-**Frontend Developer** · **Cybersecurity Enthusiast** · **NMAMIT '27**
+**Frontend Developer** Â· **Cybersecurity Enthusiast** Â· **NMAMIT '27**
 
 *Designing & developing interactive web interfaces with React, and applying principles of Offensive Security, Threat Detection & System Hardening.*
 
 ---
 
-**98 Repositories** · **74 Public** · **24+ Private** · **18 Featured Below**
+**98 Repositories** Â· **74 Public** Â· **24+ Private** Â· **18 Featured Below**
 
 </div>
 
 ---
 
-## 🛠️ Tech Stack
+## ðŸ› ï¸ Tech Stack
 
 <div align="center">
 
@@ -34,24 +32,24 @@
 
 ---
 
-## 🏆 Featured Projects
+## ðŸ† Featured Projects
 
 > Only projects with **complete project documentation** in their README are listed below.
 
 ---
 
-### 🔐 Cybersecurity & Security
+### ðŸ” Cybersecurity & Security
 
 ---
 
-#### 1. 🛡️ WALRUS — Cybersecurity & Digital Safety Platform
+#### 1. ðŸ›¡ï¸ WALRUS â€” Cybersecurity & Digital Safety Platform
 
-[ · `TypeScript 60.5%` · `JavaScript 34.7%` · `Python 1.9%`
+[ Â· `TypeScript 60.5%` Â· `JavaScript 34.7%` Â· `Python 1.9%`
 
 
 
 <details>
-<summary>💻 <b>Code Snippet — AI Threat Scoring</b></summary>
+<summary>ðŸ’» <b>Code Snippet â€” AI Threat Scoring</b></summary>
 
 ```typescript
 interface ThreatAnalysisResult {
@@ -81,31 +79,30 @@ async function analyzeContent(input: string, type: 'text' | 'url' | 'email'): Pr
 
 ---
 
-#### 2. 🧠 DriftGuard — ML Network Intrusion Detection System
+#### 2. ðŸ§  DriftGuard â€” ML Network Intrusion Detection System
 
-[![Repo](https://img.shields.io/badge/Repo-DriftGuard-blue?style=flat-square&logo=github)](https://github.com/NITHINKR06/DriftGuard) · `Jupyter Notebook 86.4%` · `Python 8.0%`
 
-DriftGuard is a machine learning-based network intrusion detection system (NIDS) that addresses one of the most persistent challenges in cybersecurity: the inability of ML models to generalize across different network environments. Most intrusion detection systems fail when deployed in networks different from where they were trained, but DriftGuard maintains robust performance across diverse environments — from academic networks to real-world ISP traffic — without requiring retraining.
+DriftGuard is a machine learning-based network intrusion detection system (NIDS) that addresses one of the most persistent challenges in cybersecurity: the inability of ML models to generalize across different network environments. Most intrusion detection systems fail when deployed in networks different from where they were trained, but DriftGuard maintains robust performance across diverse environments â€” from academic networks to real-world ISP traffic â€” without requiring retraining.
 
-The system employs an ensemble of three complementary AI models working together through a weighted fusion approach. The Isolation Forest provides fast, unsupervised tree-based anomaly detection on high-dimensional network traffic data with a contamination factor of 0.1. The Dense Autoencoder uses a symmetric architecture (77 → 50 → 25 → 50 → 77) trained exclusively on benign traffic samples, detecting anomalies through reconstruction error analysis. The Bidirectional LSTM Autoencoder captures temporal dependencies in network flows using a window size of 10 timesteps, identifying sequential attack patterns that point-based models miss. Risk scores are computed via weighted ensemble fusion (0.3 × Isolation Forest + 0.4 × Autoencoder + 0.3 × LSTM), and SHAP (SHapley Additive exPlanations) analysis provides interpretable explanations for each flagged flow.
+The system employs an ensemble of three complementary AI models working together through a weighted fusion approach. The Isolation Forest provides fast, unsupervised tree-based anomaly detection on high-dimensional network traffic data with a contamination factor of 0.1. The Dense Autoencoder uses a symmetric architecture (77 â†’ 50 â†’ 25 â†’ 50 â†’ 77) trained exclusively on benign traffic samples, detecting anomalies through reconstruction error analysis. The Bidirectional LSTM Autoencoder captures temporal dependencies in network flows using a window size of 10 timesteps, identifying sequential attack patterns that point-based models miss. Risk scores are computed via weighted ensemble fusion (0.3 Ã— Isolation Forest + 0.4 Ã— Autoencoder + 0.3 Ã— LSTM), and SHAP (SHapley Additive exPlanations) analysis provides interpretable explanations for each flagged flow.
 
 DriftGuard validates its approach across three distinct datasets: CICIDS2017 for training, UNSW-NB15 for cross-dataset validation, and UGR16v2noIRC for real-world ISP traffic validation. The system achieves a processing throughput of approximately 2,380 network flows per second with low latency, making it viable for production deployment. Future enhancements include Zeek real-time inference integration and automated MITRE ATT&CK technique mapping.
 
 <details>
-<summary>🔧 <b>ML Architecture</b></summary>
+<summary>ðŸ”§ <b>ML Architecture</b></summary>
 
 ```
 Models:
-  Isolation Forest   — Unsupervised tree-based anomaly detection, contamination=0.1
-  Autoencoder        — Dense NN: 77 → 50 → 25 → 50 → 77, trained on benign traffic only
-  LSTM Autoencoder   — Bidirectional LSTM layers, window=10 timesteps, temporal patterns
+  Isolation Forest   â€” Unsupervised tree-based anomaly detection, contamination=0.1
+  Autoencoder        â€” Dense NN: 77 â†’ 50 â†’ 25 â†’ 50 â†’ 77, trained on benign traffic only
+  LSTM Autoencoder   â€” Bidirectional LSTM layers, window=10 timesteps, temporal patterns
 
-Scoring: 0.3×IF + 0.4×AE + 0.3×LSTM (weighted ensemble fusion)
+Scoring: 0.3Ã—IF + 0.4Ã—AE + 0.3Ã—LSTM (weighted ensemble fusion)
 
 Datasets:
-  CICIDS2017         — Training dataset (academic network)
-  UNSW-NB15          — Cross-dataset validation
-  UGR16v2noIRC       — Real-world ISP traffic validation
+  CICIDS2017         â€” Training dataset (academic network)
+  UNSW-NB15          â€” Cross-dataset validation
+  UGR16v2noIRC       â€” Real-world ISP traffic validation
 
 Future: Zeek Real-Time Inference + MITRE ATT&CK Auto-Mapping
 ```
@@ -114,12 +111,11 @@ Future: Zeek Real-Time Inference + MITRE ATT&CK Auto-Mapping
 
 ---
 
-#### 3. 🔐 CHC Secure File Management System
-
-[![Repo](https://img.shields.io/badge/Repo-chc--secure--file--system-blue?style=flat-square&logo=github)](https://github.com/NITHINKR06/chc-secure-file-system) · `Python 47.2%` · `TypeScript 45.2%`
+#### 3. ðŸ” CHC Secure File Management System
 
 
-<summary>💻 <b>Code Snippet — CHC Encryption Core (Python)</b></summary>
+
+<summary>ðŸ’» <b>Code Snippet â€” CHC Encryption Core (Python)</b></summary>
 
 ```python
 import hashlib, hmac
@@ -136,7 +132,7 @@ class CHCEncryptor:
         return hmac.new(self.master_secret, context, hashlib.sha256).digest()
     
     def encrypt_block(self, plaintext: bytes, seed: bytes, prev_cipher: bytes = b'') -> bytes:
-        """CHC block encryption — each block depends on previous ciphertext."""
+        """CHC block encryption â€” each block depends on previous ciphertext."""
         chain_state = hashlib.sha256(seed + prev_cipher).digest()
         keystream = self._expand_key(chain_state, len(plaintext))
         return bytes(p ^ k for p, k in zip(plaintext, keystream))
@@ -147,28 +143,26 @@ class CHCEncryptor:
 
 ---
 
-## 🌱 Currently Learning
+## ðŸŒ± Currently Learning
 
-- 🔒 Advanced **Offensive Security** & Threat Detection
-- ☁️ **AWS** — Cloud services & architecture
-- 📱 **Flutter** — Cross-platform mobile development
-- 🔐 **InfoSec** — Penetration testing, system hardening
-- 🤖 **LangChain** — AI agent development
+- ðŸ”’ Advanced **Offensive Security** & Threat Detection
+- â˜ï¸ **AWS** â€” Cloud services & architecture
+- ðŸ“± **Flutter** â€” Cross-platform mobile development
+- ðŸ” **InfoSec** â€” Penetration testing, system hardening
+- ðŸ¤– **LangChain** â€” AI agent development
 
 ---
 
-## ⚠️ Private Repositories
+## âš ï¸ Private Repositories
 
 > 24+ additional projects are in private repositories. Contact me for access and demos.
 
 ---
 
-## 📬 Connect
+## ðŸ“¬ Connect
 
 <div align="center">
 
-[![GitHub](https://img.shields.io/badge/GitHub-NITHINKR06-181717?style=for-the-badge&logo=github)](https://github.com/NITHINKR06)
-[![Email](https://img.shields.io/badge/Email-Contact_Me-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:nithinkr06@gmail.com)
 
 </div>
 
@@ -176,6 +170,6 @@ class CHCEncryptor:
 
 <div align="center">
 
-*⭐ If you find these projects interesting, please consider giving them a star!*
+*â­ If you find these projects interesting, please consider giving them a star!*
 
 </div>

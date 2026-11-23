@@ -1,9 +1,7 @@
 /**
  * @component About
  * @description About section of the Animated 3D Portfolio
- * @author      Nithin K R — https://github.com/NITHINKR06
- * @license     Attribution required — see LICENSE in project root
- * @source      https://github.com/NITHINKR06/Animated_Portfolio
+ * @license     Attribution required â€” see LICENSE in project root
  */
 import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
@@ -53,7 +51,7 @@ export function About() {
   const replyTimerRef = useRef<number | null>(null);
   // Mirrors `messages` outside React state so sendMessage can read the latest
   // history synchronously without putting a side effect (the setTimeout) inside
-  // a setState updater — StrictMode double-invokes updaters in dev, which would
+  // a setState updater â€” StrictMode double-invokes updaters in dev, which would
   // otherwise schedule two timeouts and post the bot reply twice.
   const messagesRef = useRef<Message[]>(messages);
 
@@ -178,7 +176,7 @@ export function About() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-5">
-          {/* LEFT — profile card */}
+          {/* LEFT â€” profile card */}
           <TiltCard maxTilt={6} className="lg:col-span-4">
             <GradientBorder active radius="rounded-[2rem]" className="h-full rounded-[2rem]">
               <div
@@ -250,7 +248,7 @@ export function About() {
             </GradientBorder>
           </TiltCard>
 
-          {/* RIGHT — fixed-size chat */}
+          {/* RIGHT â€” fixed-size chat */}
           <TiltCard maxTilt={4} className="lg:col-span-8">
             <GradientBorder active radius="rounded-[1.75rem]" className="h-full rounded-[1.75rem]">
               <div
@@ -370,17 +368,6 @@ export function About() {
                     Instagram
                   </a>
                 </div>
-                <p className="mt-4 text-xs text-slate-500">
-                  Original design &amp; code by{' '}
-                  <a
-                    className="hover:text-red-300 transition-colors"
-                    href="https://github.com/NITHINKR06"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Nithin K R — https://github.com/NITHINKR06
-                  </a>
-                </p>
               </div>
             </GradientBorder>
           </TiltCard>

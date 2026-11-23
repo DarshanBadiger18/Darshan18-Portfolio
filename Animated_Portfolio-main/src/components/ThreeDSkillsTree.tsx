@@ -1,11 +1,8 @@
 /**
  * @component ThreeDSkillsTree
  * @description ThreeDSkillsTree section of the Animated 3D Portfolio
- * @author      Nithin K R — https://github.com/NITHINKR06
- * @license     Attribution required — see LICENSE in project root
- * @source      https://github.com/NITHINKR06/Animated_Portfolio
+ * @license     Attribution required â€” see LICENSE in project root
  *
- * Part of a personal portfolio. Content and design belong to Nithin K R.
  * Code structure may be studied; redistribution as personal portfolio
  * without attribution violates the project license.
  */
@@ -33,28 +30,28 @@ interface ThreeDSkillsTreeProps {
  * Branch positions extracted directly from Skeletal_Tree_FREE.obj vertex data.
  *
  * Method: parsed all 3499 vertices, filtered Y > 3.5 (no ground/root),
- * divided into 12-height × 12-angle sectors, picked the outermost vertex
+ * divided into 12-height Ã— 12-angle sectors, picked the outermost vertex
  * per sector (max radial distance from trunk center X=0, Z=0),
  * then filtered out duplicates within 1.5 units of each other.
  *
  * OBJ coordinate space:
- *   X: -4.03 → 19.38  (tree extends heavily to the RIGHT)
- *   Y: -0.06 → 18.88  (height)
- *   Z: -4.68 → 7.04   (depth)
+ *   X: -4.03 â†’ 19.38  (tree extends heavily to the RIGHT)
+ *   Y: -0.06 â†’ 18.88  (height)
+ *   Z: -4.68 â†’ 7.04   (depth)
  *
- * After THREE.js transform (sf ≈ 0.396, targetHeight=7.5):
- *   World X: -4.64 → +4.64
- *   World Y: -3.50 → +4.00
+ * After THREE.js transform (sf â‰ˆ 0.396, targetHeight=7.5):
+ *   World X: -4.64 â†’ +4.64
+ *   World Y: -3.50 â†’ +4.00
  *   Camera sits at Z=14, looking at (0, 0.5, 0)
  */
 const BRANCH_POSITIONS: [number, number, number][] = [
-  // Low branches (Y 3.5–5)
+  // Low branches (Y 3.5â€“5)
   [-2.21, 4.389, -1.311],
   [-2.691, 4.393, 1.92],
   [-4.032, 4.404, 0.53],
   [4.278, 4.69, -0.81],
   [8.556, 4.99, -1.619],
-  // Mid-low (Y 5–8)
+  // Mid-low (Y 5â€“8)
   [-2.703, 6.353, 1.593],
   [-3.762, 6.499, 0.484],
   [7.331, 6.692, -3.913],
@@ -65,33 +62,33 @@ const BRANCH_POSITIONS: [number, number, number][] = [
   [9.31, 7.955, 0.097],
   [18.62, 8.255, 0.194],
   [-2.915, 8.359, 0.432],
-  // Mid (Y 8–10)
+  // Mid (Y 8â€“10)
   [7.973, 9.05, 0.649],
   [-0.31, 9.244, 0.031],
   [15.946, 9.35, 1.298],
   [4.434, 9.804, 2.656],
   [-1.727, 10.045, 0.77],
   [0.735, 10.764, -0.13],
-  // Mid-high (Y 10–12)
+  // Mid-high (Y 10â€“12)
   [8.563, 10.89, 0.651],
   [4.864, 11.015, 5.973],
   [17.127, 11.19, 1.301],
   [0.448, 11.259, 1.617],
   [5.807, 11.781, 7.036],
   [7.125, 11.904, -0.01],
-  // High (Y 12–14)
+  // High (Y 12â€“14)
   [14.25, 12.204, -0.02],
   [6.335, 12.882, 0.253],
   [7.536, 13.053, -0.353],
   [12.67, 13.182, 0.506],
   [1.415, 13.313, 0.859],
   [15.072, 13.353, -0.705],
-  // Upper canopy (Y 14–16)
+  // Upper canopy (Y 14â€“16)
   [6.478, 14.572, 0.187],
   [3.532, 14.719, 2.082],
   [12.955, 14.872, 0.375],
   [0.206, 15.095, -0.104],
-  // Near-top (Y 16–18)
+  // Near-top (Y 16â€“18)
   [-1.513, 16.326, 0.924],
   [-0.56, 16.408, -1.15],
   [3.452, 17.091, 2.866],
@@ -110,7 +107,7 @@ const BRANCH_POSITIONS: [number, number, number][] = [
   [5.0, 9.6, 3.0],
 ];
 
-// ─── Fruit shape: round badge with a tiny stem nub ───────────────────────────
+// â”€â”€â”€ Fruit shape: round badge with a tiny stem nub â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 function createFruitGeometry(radius: number): THREE.SphereGeometry {
   return new THREE.SphereGeometry(radius, 10, 10);
 }
@@ -146,7 +143,7 @@ export function ThreeDSkillsTree({
     return list;
   }, []);
 
-  // ── Three.js Initialization ────────────────────────────────────────────
+  // â”€â”€ Three.js Initialization â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
   useEffect(() => {
     if (!canvasRef.current || !containerRef.current) return;
 
@@ -159,18 +156,18 @@ export function ThreeDSkillsTree({
     let width = container.clientWidth;
     let height = container.clientHeight;
 
-    // ── Scene ──────────────────────────────────────────────────────────────
+    // â”€â”€ Scene â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
     const scene = new THREE.Scene();
     scene.fog = new THREE.FogExp2(0x050405, 0.018);
 
-    // ── Camera ─────────────────────────────────────────────────────────────
-    // The tree in world space spans X:-4.6→+4.6, Y:-3.5→+4.0
+    // â”€â”€ Camera â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+    // The tree in world space spans X:-4.6â†’+4.6, Y:-3.5â†’+4.0
     // We pull back enough to see the whole tree centered
     const camera = new THREE.PerspectiveCamera(50, width / height, 0.1, 200);
     camera.position.set(0, 0.5, 14);
     camera.lookAt(0, 0.5, 0);
 
-    // ── Renderer ───────────────────────────────────────────────────────────
+    // â”€â”€ Renderer â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
     let renderer: THREE.WebGLRenderer;
     try {
       renderer = new THREE.WebGLRenderer({
@@ -189,7 +186,7 @@ export function ThreeDSkillsTree({
       return;
     }
 
-    // ── Lighting ───────────────────────────────────────────────────────────
+    // â”€â”€ Lighting â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
     scene.add(new THREE.AmbientLight(0xffffff, 0.4));
 
     const dlTop = new THREE.DirectionalLight(0xf6efe6, 2.2); // cream top
@@ -208,12 +205,12 @@ export function ThreeDSkillsTree({
     ptBase.position.set(0, -3, 2);
     scene.add(ptBase);
 
-    // ── Tree group (everything rotates together) ───────────────────────────
+    // â”€â”€ Tree group (everything rotates together) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
     const treeGroup = new THREE.Group();
     scene.add(treeGroup);
 
     // Pivot point: shift tree so trunk base is at group center
-    // After transforms, trunk base is at world Y ≈ -3.5
+    // After transforms, trunk base is at world Y â‰ˆ -3.5
     // We offset treeGroup.position.y so tree sits centered in view
     treeGroup.position.set(0, 0, 0);
 
@@ -225,7 +222,7 @@ export function ThreeDSkillsTree({
     };
     const skillDummies: SkillDummy[] = [];
 
-    // ── Load OBJ ───────────────────────────────────────────────────────────
+    // â”€â”€ Load OBJ â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
     const loader = new OBJLoader();
     loader.load(
       '/3d/Skeletal_Tree_FREE.obj',
@@ -257,7 +254,7 @@ export function ThreeDSkillsTree({
         obj.scale.setScalar(sf);
 
         // Center X/Z on trunk, put bottom at Y = -3.5
-        // trunk base ≈ Y_min of mesh = box.min.y
+        // trunk base â‰ˆ Y_min of mesh = box.min.y
         obj.position.set(-ctr.x * sf, -box.min.y * sf - 3.5, -ctr.z * sf);
 
         // Bark material: dark neutral with metallic sheen
@@ -273,7 +270,7 @@ export function ThreeDSkillsTree({
 
         treeGroup.add(obj);
 
-        // ── Attach skill fruits to REAL branch-tip positions ─────────────
+        // â”€â”€ Attach skill fruits to REAL branch-tip positions â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
         flatSkills.forEach((skill, i) => {
           const tipIdx = i % BRANCH_POSITIONS.length;
@@ -290,7 +287,7 @@ export function ThreeDSkillsTree({
             .addScaledVector(outward, twigReach)
             .add(new THREE.Vector3(0, twigLift, 0));
 
-          // Convert OBJ mesh coords → THREE world coords
+          // Convert OBJ mesh coords â†’ THREE world coords
           // (same transform as applied to obj above)
           const worldTip = new THREE.Vector3(
             twigTip.x * sf + obj.position.x,
@@ -305,7 +302,7 @@ export function ThreeDSkillsTree({
           const hangPos = worldTip.clone();
           hangPos.y -= stemLen;
 
-          // ── Fruit sphere ──────────────────────────────────────────────
+          // â”€â”€ Fruit sphere â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
           const fruitRadius = 0.055 + Math.random() * 0.025;
           const fruitGeo = createFruitGeometry(fruitRadius);
           const fruitColor = new THREE.Color(skill.color);
@@ -320,7 +317,7 @@ export function ThreeDSkillsTree({
           fruit.position.copy(hangPos);
           treeGroup.add(fruit);
 
-          // ── Stem line (branch tip → fruit) ────────────────────────────
+          // â”€â”€ Stem line (branch tip â†’ fruit) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
           const stemPts = [worldTip.clone(), hangPos.clone()];
           const stemGeo = new THREE.BufferGeometry().setFromPoints(stemPts);
           const stemMat = new THREE.LineBasicMaterial({
@@ -332,7 +329,7 @@ export function ThreeDSkillsTree({
           const stemLine = new THREE.Line(stemGeo, stemMat);
           treeGroup.add(stemLine);
 
-          // ── Knot sphere at branch attachment ─────────────────────────
+          // â”€â”€ Knot sphere at branch attachment â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
           const knotGeo = new THREE.SphereGeometry(0.018, 5, 5);
           const knotMat = new THREE.MeshBasicMaterial({
             color: fruitColor,
@@ -343,7 +340,7 @@ export function ThreeDSkillsTree({
           knot.position.copy(worldTip);
           treeGroup.add(knot);
 
-          // ── Dummy at fruit center (for 2D projection) ─────────────────
+          // â”€â”€ Dummy at fruit center (for 2D projection) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
           const dummy = new THREE.Object3D();
           dummy.position.copy(hangPos);
           treeGroup.add(dummy);
@@ -361,7 +358,7 @@ export function ThreeDSkillsTree({
       },
     );
 
-    // ── Mouse / touch rotation ─────────────────────────────────────────────
+    // â”€â”€ Mouse / touch rotation â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
     let tgtRY = 0,
       tgtRX = 0;
     let curRY = 0,
@@ -413,7 +410,7 @@ export function ThreeDSkillsTree({
       dragging = false;
     };
 
-    // ── Zoom support ───────────────────────────────────────────────────────
+    // â”€â”€ Zoom support â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
     let curZ = 14;
 
     const onWheel = (e: WheelEvent) => {
@@ -435,7 +432,7 @@ export function ThreeDSkillsTree({
     window.addEventListener('touchmove', onTouchMove, { passive: true });
     window.addEventListener('touchend', onTouchEnd);
 
-    // ── Resize ─────────────────────────────────────────────────────────────
+    // â”€â”€ Resize â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
     const onResize = () => {
       if (!container) return;
       width = container.clientWidth;
@@ -455,7 +452,7 @@ export function ThreeDSkillsTree({
     };
     document.addEventListener('fullscreenchange', onFullscreenChange);
 
-    // ── Render loop ────────────────────────────────────────────────────────
+    // â”€â”€ Render loop â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
     const tmpV = new THREE.Vector3();
     let rafId = 0;
     let lastTime = performance.now();
@@ -483,7 +480,7 @@ export function ThreeDSkillsTree({
       // Gentle point-light pulse for atmosphere
       ptCenter.intensity = 3.5 + Math.sin(now * 0.001) * 0.8;
 
-      // ── Project 3D positions → 2D overlay ────────────────────────────
+      // â”€â”€ Project 3D positions â†’ 2D overlay â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
       const overlayEl = overlayRef.current;
       if (overlayEl && skillDummies.length > 0) {
         const children = overlayEl.children;
@@ -535,7 +532,7 @@ export function ThreeDSkillsTree({
     };
     loop();
 
-    // ── Cleanup ────────────────────────────────────────────────────────────
+    // â”€â”€ Cleanup â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
     return () => {
       isCancelled = true;
       cancelAnimationFrame(rafId);
@@ -627,7 +624,7 @@ export function ThreeDSkillsTree({
             />
           </div>
           <p className="text-red-300/70 text-sm tracking-widest uppercase font-light">
-            Growing Skills Tree…
+            Growing Skills Treeâ€¦
           </p>
         </div>
       )}
@@ -647,11 +644,11 @@ export function ThreeDSkillsTree({
                       bg-white/[0.04] border border-white/[0.07] px-3 py-2 rounded-lg
                       pointer-events-none select-none z-10 backdrop-blur-sm">
         <div className="flex items-center gap-2">
-          <span>🖱</span>
+          <span>ðŸ–±</span>
           <span>Drag to rotate</span>
         </div>
         <div className="flex items-center gap-2">
-          <span>🔍</span>
+          <span>ðŸ”</span>
           <span>Scroll to zoom</span>
         </div>
       </div> */}
@@ -760,7 +757,7 @@ export function ThreeDSkillsTree({
         ))}
       </div>
 
-      {/* ── Skill label overlay ── */}
+      {/* â”€â”€ Skill label overlay â”€â”€ */}
       <div
         ref={overlayRef}
         className="absolute inset-0 pointer-events-none overflow-hidden select-none"

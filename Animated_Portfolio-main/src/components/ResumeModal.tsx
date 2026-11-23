@@ -1,11 +1,8 @@
 /**
  * @component ResumeModal
  * @description ResumeModal section of the Animated 3D Portfolio
- * @author      Nithin K R — https://github.com/NITHINKR06
- * @license     Attribution required — see LICENSE in project root
- * @source      https://github.com/NITHINKR06/Animated_Portfolio
+ * @license     Attribution required â€” see LICENSE in project root
  *
- * Part of a personal portfolio. Content and design belong to Nithin K R.
  * Code structure may be studied; redistribution as personal portfolio
  * without attribution violates the project license.
  */
@@ -100,7 +97,7 @@ const ResumeModal = ({ isOpen, onClose }: ResumeModalProps) => {
                         Resume
                       </span>
                     </h2>
-                    <p className="text-sm text-gray-400">Darshan Badiger • Software Developer</p>
+                    <p className="text-sm text-gray-400">Darshan Badiger â€¢ Software Developer</p>
                   </div>
                 </div>
 
