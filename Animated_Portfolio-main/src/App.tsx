@@ -1,5 +1,5 @@
 import React, { useState, useEffect, lazy, Suspense } from 'react';
-import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
+import { AnimatePresence } from 'framer-motion';
 import { Routes, Route, useNavigate, useLocation } from 'react-router-dom';
 import {
   LoadingScreen,
@@ -12,7 +12,6 @@ import {
   Certification,
   Sidebar,
   MobileNav,
-  Services,
   About,
 } from './components';
 const ThreeDBackground = lazy(() =>
@@ -24,17 +23,14 @@ const ResumeModal = lazy(() =>
 const ProjectDetailModal = lazy(() =>
   import('./components/ProjectDetailModal').then((m) => ({ default: m.ProjectDetailModal })),
 );
-import { Sparkles } from 'lucide-react';
 import { useLenis } from './hooks';
 import type { Project } from './data';
 
 function PortfolioHome() {
   const navigate = useNavigate();
   const location = useLocation();
-  const prefersReducedMotion = useReducedMotion();
   const isThreeDBackgroundEnabled = false;
 
-  const isOnServicesPage = location.pathname === '/services';
   const isOnResumePage = location.pathname === '/resume';
 
   // ── resume modal ─────────────────────────────────────
@@ -81,36 +77,6 @@ function PortfolioHome() {
       </Suspense>
       <Sidebar />
       <MobileNav />
-
-      {/* Mobile Services Button */}
-      <motion.div
-        initial={prefersReducedMotion ? false : { opacity: 0, y: -20 }}
-        animate={prefersReducedMotion ? undefined : { opacity: 1, y: 0 }}
-        transition={prefersReducedMotion ? undefined : { duration: 0.6, delay: 0.5 }}
-        className="lg:hidden fixed top-4 right-4 z-40"
-      >
-        <motion.button
-          onClick={() => navigate('/services')}
-          className={`flex items-center gap-2 px-4 py-2.5 rounded-full font-semibold text-sm shadow-lg backdrop-blur-md border transition-all ${
-            isOnServicesPage
-              ? 'bg-red-600 text-white border-red-400/50 shadow-red-500/40'
-              : 'bg-white/10 text-white border-white/20 hover:bg-white/20'
-          }`}
-          whileHover={prefersReducedMotion ? undefined : { scale: 1.05, y: -2 }}
-          whileTap={prefersReducedMotion ? undefined : { scale: 0.95 }}
-          aria-label="View Services"
-          >
-            <motion.div
-              animate={prefersReducedMotion ? undefined : { rotate: [0, 360] }}
-              transition={
-                prefersReducedMotion ? undefined : { duration: 2, repeat: Infinity, ease: 'linear' }
-              }
-            >
-            <Sparkles size={18} className={isOnServicesPage ? 'text-white' : 'text-red-300'} />
-            </motion.div>
-            <span>Services</span>
-        </motion.button>
-      </motion.div>
 
       <main className="relative z-10">
         {/* Hero gets openProject so orbit icons can trigger modal */}
@@ -193,7 +159,6 @@ function App() {
           <Routes>
             <Route path="/" element={<PortfolioHome />} />
             <Route path="/resume" element={<PortfolioHome />} />
-            <Route path="/services" element={<Services />} />
           </Routes>
         </div>
       )}

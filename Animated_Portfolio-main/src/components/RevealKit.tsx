@@ -1,9 +1,7 @@
 /**
  * @component RevealKit
- * @description Shared hover/interaction primitives (3D mouse-tilt cards, rotating
- *   gradient borders, magnetic buttons) originally built for the Services page â€”
- *   pulled out here so the rest of the site can reuse the exact same interactions
- *   instead of re-implementing lookalikes.
+ * @description Shared hover and interaction primitives for 3D mouse-tilt cards,
+ *   rotating gradient borders, and magnetic buttons.
  * @license     Attribution required â€” see LICENSE in project root
  */
 import { useRef, useState } from 'react';

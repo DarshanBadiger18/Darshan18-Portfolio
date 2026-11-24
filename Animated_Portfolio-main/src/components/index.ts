@@ -12,7 +12,6 @@ export { ProjectDetailModal } from './ProjectDetailModal';
 export { Projects } from './Projects';
 export { ResumeModal } from './ResumeModal';
 export { SectionReveal } from './SectionReveal';
-export { Services } from './Services';
 export { Sidebar } from './Sidebar';
 export { Skills, CategoryTab } from './Skills';
 export { ThreeDBackground } from './ThreeDBackground';

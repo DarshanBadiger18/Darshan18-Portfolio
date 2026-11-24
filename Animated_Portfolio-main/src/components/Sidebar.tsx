@@ -16,22 +16,18 @@ import {
   GraduationCap,
   FolderOpen,
   Award,
-  Sparkles,
   SunMedium,
   Moon,
 } from 'lucide-react';
-import { useNavigate, useLocation } from 'react-router-dom';
 
 type NavItem = {
   label: string;
   href: string;
   icon: React.ComponentType<{ className?: string }>;
-  isRoute?: boolean;
   isThemeToggle?: boolean;
 };
 
 const navItems: NavItem[] = [
-  { label: 'Services', href: '/services', icon: Sparkles, isRoute: true },
   { label: 'Home', href: '#home', icon: Home },
   { label: 'About', href: '#about', icon: User },
   { label: 'Skills', href: '#skills', icon: Code },
@@ -51,12 +47,10 @@ export function Sidebar() {
     return document.documentElement.classList.contains('dark');
   });
   const prefersReducedMotion = useReducedMotion();
-  const navigate = useNavigate();
-  const location = useLocation();
 
   useEffect(() => {
     const onScroll = () => {
-      const sections = navItems.filter((item) => !item.isRoute).map((item) => item.href.slice(1));
+      const sections = navItems.map((item) => item.href.slice(1));
       const current = sections.find((sectionId) => {
         const el = document.getElementById(sectionId);
         if (!el) return false;
@@ -85,15 +79,11 @@ export function Sidebar() {
       return;
     }
 
-    if (item.isRoute) {
-      navigate(item.href);
-    } else {
-      window.dispatchEvent(
-        new CustomEvent('lenis-scroll-to', {
-          detail: { target: item.href },
-        }),
-      );
-    }
+    window.dispatchEvent(
+      new CustomEvent('lenis-scroll-to', {
+        detail: { target: item.href },
+      }),
+    );
   };
 
   return (
@@ -107,13 +97,9 @@ export function Sidebar() {
       <ul className="flex flex-col gap-3 p-2 rounded-2xl theme-panel backdrop-blur-md">
         {navItems.map((item, index) => {
           const Icon = item.icon;
-          const isServices = item.label === 'Services';
-          const isOnServicesPage = location.pathname === '/services';
           const isActive = item.isThemeToggle
             ? false
-            : isServices
-              ? isOnServicesPage
-              : activeSection === item.href.slice(1);
+            : activeSection === item.href.slice(1);
 
           return (
             <motion.li
@@ -130,13 +116,7 @@ export function Sidebar() {
                 onMouseLeave={() => setHovered(null)}
                   className={
                   `group flex h-11 w-11 items-center justify-center rounded-xl border transition-colors ` +
-                  `${
-                    isServices
-                      ? 'bg-gradient-to-br from-red-500/20 to-white/10 border-red-400/40 shadow-lg shadow-red-500/20'
-                      : isActive
-                        ? 'bg-white/10 border-white/20'
-                        : 'bg-white/5 border-white/10 hover:bg-white/10'
-                  }`
+                  `${isActive ? 'bg-white/10 border-white/20' : 'bg-white/5 border-white/10 hover:bg-white/10'}`
                 }
                 aria-label={item.label}
                 whileHover={prefersReducedMotion ? undefined : { scale: 1.1, x: 4 }}
@@ -146,18 +126,14 @@ export function Sidebar() {
                   animate={
                     prefersReducedMotion
                       ? { rotate: 0, scale: 1 }
-                      : isServices
-                        ? { rotate: [0, 360], scale: [1, 1.1, 1] }
-                        : isActive
-                          ? { rotate: [0, 360] }
-                          : { rotate: 0 }
+                      : isActive
+                        ? { rotate: [0, 360] }
+                        : { rotate: 0 }
                   }
                   transition={
                     prefersReducedMotion
                       ? undefined
-                      : isServices
-                        ? { duration: 2, repeat: Infinity, ease: 'easeInOut' }
-                        : { duration: 0.6, ease: 'easeInOut' }
+                      : { duration: 0.6, ease: 'easeInOut' }
                   }
                 >
                   {item.isThemeToggle ? (
@@ -168,7 +144,7 @@ export function Sidebar() {
                     )
                   ) : (
                     <Icon
-                      className={`h-5 w-5 ${isServices ? 'text-red-300' : isActive ? 'text-white' : 'text-gray-300 group-hover:text-white'}`}
+                      className={`h-5 w-5 ${isActive ? 'text-white' : 'text-gray-300 group-hover:text-white'}`}
                     />
                   )}
                 </motion.div>
@@ -180,9 +156,7 @@ export function Sidebar() {
                   animate={{ opacity: 1, x: 0, scale: 1 }}
                   exit={{ opacity: 0, x: -10, scale: 0.8 }}
                   transition={{ duration: 0.2 }}
-                  className={`pointer-events-none absolute left-full top-1/2 -translate-y-1/2 ml-3 px-2.5 py-1 rounded-md text-white text-sm whitespace-nowrap border backdrop-blur-md ${
-                    isServices ? 'bg-red-600/80 border-red-400/50' : 'theme-panel'
-                  }`}
+                  className="pointer-events-none absolute left-full top-1/2 -translate-y-1/2 ml-3 px-2.5 py-1 rounded-md text-white text-sm whitespace-nowrap border backdrop-blur-md theme-panel"
                 >
                   {item.label}
                 </motion.div>
